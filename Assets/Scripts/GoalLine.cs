@@ -33,6 +33,11 @@ public class GoalLine : MonoBehaviour
     {
         // Wait for 3 seconds
         yield return new WaitForSeconds(2);
+        int sceneIndex = SceneManager.GetActiveScene().buildIndex;
+        if(sceneIndex+1 > PlayerProgress.currentLevel){
+            PlayerProgress.currentLevel = sceneIndex +1;
+        }
+      
 
         // Then load the main menu scene
         SceneManager.LoadScene("MainMenu"); // replace "MainMenu" with the name of your main menu scene
